@@ -24,3 +24,6 @@ class MaxHeap:
         
     def _last_index(self):
         return self._size() -1
+    
+    def _value_at(self, index):
+        return self._data[index]
