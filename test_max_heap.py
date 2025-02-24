@@ -45,17 +45,17 @@ class TestMaxHeap(unittest.TestCase):
         h = MaxHeap()
         self.assertEqual(0, h._size())
 
-    # def test_size_data(self):
-    #     """
-    #     Test 4: The _size() of a heap is equal to the number of values in its list.
-    #     """
-    #     h = MaxHeap()
-    #     h._data.append('fake')
-    #     self.assertEqual(1, h._size())
-    #     h._data.append('fake')
-    #     self.assertEqual(2, h._size())
-    #     h._data.pop()
-    #     self.assertEqual(1, h._size())
+    def test_size_data(self):
+        """
+        Test 4: The _size() of a heap is equal to the number of values in its list.
+        """
+        h = MaxHeap()
+        h._data.append('fake')
+        self.assertEqual(1, h._size())
+        h._data.append('fake')
+        self.assertEqual(2, h._size())
+        h._data.pop()
+        self.assertEqual(1, h._size())
 
     # """
     # Emptiness. A warm-up. Good to know, and a handy abstraction that you might
