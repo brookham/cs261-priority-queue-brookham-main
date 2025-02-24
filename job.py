@@ -18,11 +18,24 @@ class Job:
                 return True
         return False
     
-    def __lt__ (self, priority):
+    def __lt__(self, priority):
         if self.priority < priority.priority:
             return True
 
+    def __gt__(self, priority):
+        if self.priority > priority.priority:
+            return True
 
+    def __le__(self, priority):
+        if self.priority <= priority.priority:
+            return True
+        
+    def __ge__(self, priority):
+        if self.priority >= priority.priority:
+            return True
+        
+    def __repr__(self):
+        return f"Job {self.priority}: {self.message}"
 
 
  
