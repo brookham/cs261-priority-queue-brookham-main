@@ -11,5 +11,5 @@
 # Collaborators:
 # Time spent:
 
-class FixMe:
+class MaxHeap:
     pass
