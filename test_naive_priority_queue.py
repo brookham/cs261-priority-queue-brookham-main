@@ -191,63 +191,63 @@ class TestNaivePriorityQueue(unittest.TestCase):
         pq = NaivePriorityQueue()
         self.assertIsNone(pq.dequeue())
 
-    # """
-    # Algorithmic complexity
-    # """
+    """
+    Algorithmic complexity
+    """
 
-    # def test_enqueue_efficiency(self):
-    #     """
-    #     Test 17: Enqueing a value is always O(1).
-    #     """
-    #     time_samples = []
-    #     for _ in range(0, 1000):
-    #         pq = NaivePriorityQueue()
-    #         start_time = time.time()
-    #         pq.enqueue('fake')
-    #         end_time = time.time()
-    #         time_samples.append(end_time - start_time)
-    #     small_average_enqueue_time = sum(time_samples) / float(len(time_samples))
+    def test_enqueue_efficiency(self):
+        """
+        Test 17: Enqueing a value is always O(1).
+        """
+        time_samples = []
+        for _ in range(0, 1000):
+            pq = NaivePriorityQueue()
+            start_time = time.time()
+            pq.enqueue('fake')
+            end_time = time.time()
+            time_samples.append(end_time - start_time)
+        small_average_enqueue_time = sum(time_samples) / float(len(time_samples))
 
-    #     large_queue = NaivePriorityQueue()
-    #     for _ in range(0, 1000000):
-    #         large_queue.enqueue('fake')
-    #     large_time_samples = []
-    #     for _ in range(0, 1000):
-    #         start_time = time.time()
-    #         large_queue.enqueue('fake')
-    #         end_time = time.time()
-    #         large_time_samples.append(end_time - start_time)
-    #     large_average_enqueue_time = sum(large_time_samples) / float(len(large_time_samples))
-    #     self.assertAlmostEqual(small_average_enqueue_time, large_average_enqueue_time, delta=small_average_enqueue_time)
+        large_queue = NaivePriorityQueue()
+        for _ in range(0, 1000000):
+            large_queue.enqueue('fake')
+        large_time_samples = []
+        for _ in range(0, 1000):
+            start_time = time.time()
+            large_queue.enqueue('fake')
+            end_time = time.time()
+            large_time_samples.append(end_time - start_time)
+        large_average_enqueue_time = sum(large_time_samples) / float(len(large_time_samples))
+        self.assertAlmostEqual(small_average_enqueue_time, large_average_enqueue_time, delta=small_average_enqueue_time)
 
-    # # While enqueing naively is efficient... what is the complexity of dequeuing?
+    # While enqueing naively is efficient... what is the complexity of dequeuing?
 
-    # def test_dequeue_efficiency(self):
-    #     """
-    #     Test 18: Dequeuing a value is O(n).
-    #     """
-    #     print("This test will take a while...") # See the comment below.
-    #     time_samples = []
-    #     for _ in range(0, 1000):
-    #         pq = NaivePriorityQueue()
-    #         pq.enqueue('fake')
-    #         start_time = time.time()
-    #         pq.dequeue()
-    #         end_time = time.time()
-    #         time_samples.append(end_time - start_time)
-    #     small_average_dequeue_time = sum(time_samples) / float(len(time_samples))
+    def test_dequeue_efficiency(self):
+        """
+        Test 18: Dequeuing a value is O(n).
+        """
+        print("This test will take a while...") # See the comment below.
+        time_samples = []
+        for _ in range(0, 1000):
+            pq = NaivePriorityQueue()
+            pq.enqueue('fake')
+            start_time = time.time()
+            pq.dequeue()
+            end_time = time.time()
+            time_samples.append(end_time - start_time)
+        small_average_dequeue_time = sum(time_samples) / float(len(time_samples))
 
-    #     large_queue = NaivePriorityQueue()
-    #     for _ in range(0, 1000000):
-    #         large_queue.enqueue('fake')
-    #     large_time_samples = []
-    #     for _ in range(0, 1000):
-    #         start_time = time.time()
-    #         large_queue.dequeue()
-    #         end_time = time.time()
-    #         large_time_samples.append(end_time - start_time)
-    #     large_average_dequeue_time = sum(large_time_samples) / float(len(large_time_samples))
-    #     self.assertNotAlmostEqual(small_average_dequeue_time, large_average_dequeue_time, delta=small_average_dequeue_time)
+        large_queue = NaivePriorityQueue()
+        for _ in range(0, 1000000):
+            large_queue.enqueue('fake')
+        large_time_samples = []
+        for _ in range(0, 1000):
+            start_time = time.time()
+            large_queue.dequeue()
+            end_time = time.time()
+            large_time_samples.append(end_time - start_time)
+        large_average_dequeue_time = sum(large_time_samples) / float(len(large_time_samples))
+        self.assertNotAlmostEqual(small_average_dequeue_time, large_average_dequeue_time, delta=small_average_dequeue_time)
 
     # Notice how the last test takes time to "prove."
     # By studying *algorithm analysis*, you can prove the efficiency deductively,
