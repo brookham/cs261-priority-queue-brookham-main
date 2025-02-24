@@ -10,8 +10,13 @@
 # Example
 # ages = PriorityQueue()
 # print(ages)
-list = []
-value = (5, "hello")
-list.append(value)
+list = sorted([])
+value1 = (5, "hello")
+value2 = (8, "po")
+value3 = (1, "fa")
+list.append(value1)
+list.append(value2)
+list.append(value3)
+
 
 print (list)

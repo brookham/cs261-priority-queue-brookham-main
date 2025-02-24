@@ -16,4 +16,5 @@ class NaivePriorityQueue:
         self.data.append(value)
 
     def dequeue(self):
+        self.data = sorted(self.data)
         return self.data.pop()
