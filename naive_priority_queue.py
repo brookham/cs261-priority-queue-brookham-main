@@ -4,9 +4,16 @@
 # IMPLEMENT THIS CLASS SECOND.
 # What is the time complexity of each operation?
 
-# Name:
+# Name: Brook Hamilton
 # Collaborators:
 # Time spent:
 
-class FixMe:
-    pass
+class NaivePriorityQueue:
+    def __init__(self):
+        self.data = []
+
+    def enqueue(self, value):
+        self.data.append(value)
+
+    def dequeue(self):
+        return self.data.pop()
