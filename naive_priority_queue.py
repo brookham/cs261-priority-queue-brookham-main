@@ -18,9 +18,11 @@ class NaivePriorityQueue:
         self.size += 1
 
     def dequeue(self):
-        self.data = sorted(self.data)
-        self.size -= 1
-        return self.data.pop()
+        if self.size != 0:
+            self.data = sorted(self.data)
+            self.size -= 1
+            return self.data.pop()
+        else: return None
     
     def is_empty(self):
         if self.size == 0:

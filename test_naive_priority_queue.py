@@ -157,39 +157,39 @@ class TestNaivePriorityQueue(unittest.TestCase):
         pq = NaivePriorityQueue()
         self.assertTrue(pq.is_empty())
 
-    # def test_not_empty(self):
-    #     """
-    #     Test 13: A queue with one enqueued value is not empty.
-    #     """
-    #     pq = NaivePriorityQueue()
-    #     pq.enqueue(Job(1, 'People'))
-    #     self.assertFalse(pq.is_empty())
+    def test_not_empty(self):
+        """
+        Test 13: A queue with one enqueued value is not empty.
+        """
+        pq = NaivePriorityQueue()
+        pq.enqueue(Job(1, 'People'))
+        self.assertFalse(pq.is_empty())
 
-    # def test_empty_after_dequeue(self):
-    #     """
-    #     Test 14: A queue with one enqueued value is empty after dequeuing.
-    #     """
-    #     pq = NaivePriorityQueue()
-    #     pq.enqueue(Job(1, 'was'))
-    #     _ = pq.dequeue()
-    #     self.assertTrue(pq.is_empty())
+    def test_empty_after_dequeue(self):
+        """
+        Test 14: A queue with one enqueued value is empty after dequeuing.
+        """
+        pq = NaivePriorityQueue()
+        pq.enqueue(Job(1, 'was'))
+        _ = pq.dequeue()
+        self.assertTrue(pq.is_empty())
 
-    # def test_not_empty_multiple(self):
-    #     """
-    #     Test 15: A queue with two enqueued values is not empty after dequeuing only one.
-    #     """
-    #     pq = NaivePriorityQueue()
-    #     pq.enqueue(Job(1, 'hustling'))
-    #     pq.enqueue(Job(3, 'arguing and bustling'))
-    #     _ = pq.dequeue()
-    #     self.assertFalse(pq.is_empty())
+    def test_not_empty_multiple(self):
+        """
+        Test 15: A queue with two enqueued values is not empty after dequeuing only one.
+        """
+        pq = NaivePriorityQueue()
+        pq.enqueue(Job(1, 'hustling'))
+        pq.enqueue(Job(3, 'arguing and bustling'))
+        _ = pq.dequeue()
+        self.assertFalse(pq.is_empty())
 
-    # def test_initial_dequeue(self):
-    #     """
-    #     Test 16: Dequeuing from an empty queue returns None.
-    #     """
-    #     pq = NaivePriorityQueue()
-    #     self.assertIsNone(pq.dequeue())
+    def test_initial_dequeue(self):
+        """
+        Test 16: Dequeuing from an empty queue returns None.
+        """
+        pq = NaivePriorityQueue()
+        self.assertIsNone(pq.dequeue())
 
     # """
     # Algorithmic complexity
