@@ -57,52 +57,52 @@ class TestMaxHeap(unittest.TestCase):
         h._data.pop()
         self.assertEqual(1, h._size())
 
-    # """
-    # Emptiness. A warm-up. Good to know, and a handy abstraction that you might
-    # use elsewhere.
-    # """
+    """
+    Emptiness. A warm-up. Good to know, and a handy abstraction that you might
+    use elsewhere.
+    """
 
-    # def test_empty_initial(self):
-    #     """
-    #     Test 5: A new heap is empty.
-    #     Hint: _size is a convenient abstraction, and helps avoid repetitive code.
-    #     """
-    #     h = MaxHeap()
-    #     self.assertTrue(h._is_empty())
+    def test_empty_initial(self):
+        """
+        Test 5: A new heap is empty.
+        Hint: _size is a convenient abstraction, and helps avoid repetitive code.
+        """
+        h = MaxHeap()
+        self.assertTrue(h._is_empty())
 
-    # def test_not_empty(self):
-    #     """
-    #     Test 6: A heap is not empty if there are items in its data list.
-    #     """
-    #     h = MaxHeap()
-    #     h._data.append('fake')
-    #     self.assertFalse(h._is_empty())
-    #     h._data.append('fake')
-    #     self.assertFalse(h._is_empty())
+    def test_not_empty(self):
+        """
+        Test 6: A heap is not empty if there are items in its data list.
+        """
+        h = MaxHeap()
+        h._data.append('fake')
+        self.assertFalse(h._is_empty())
+        h._data.append('fake')
+        self.assertFalse(h._is_empty())
 
-    # def test_empty(self):
-    #     """
-    #     Test 7: A heap with no items in its data list is empty.
-    #     """
-    #     h = MaxHeap()
-    #     h._data.append('fake')
-    #     h._data.append('fake')
-    #     h._data = []
-    #     self.assertTrue(h._is_empty())
+    def test_empty(self):
+        """
+        Test 7: A heap with no items in its data list is empty.
+        """
+        h = MaxHeap()
+        h._data.append('fake')
+        h._data.append('fake')
+        h._data = []
+        self.assertTrue(h._is_empty())
 
-    # """
-    # Last index. The index of the last element in the heap.
-    # Later, when deleting from a heap, the first step in the deletion algorithm
-    # moves the last element to the root position. So this will be handy.
-    # """
+    """
+    Last index. The index of the last element in the heap.
+    Later, when deleting from a heap, the first step in the deletion algorithm
+    moves the last element to the root position. So this will be handy.
+    """
 
-    # def test_last_index_initial(self):
-    #     """
-    #     Test 8: The 'last index' of an empty heap happens to be -1.
-    #     Hint: Easy to calculate if you know its size.
-    #     """
-    #     h = MaxHeap()
-    #     self.assertEqual(-1, h._last_index())
+    def test_last_index_initial(self):
+        """
+        Test 8: The 'last index' of an empty heap happens to be -1.
+        Hint: Easy to calculate if you know its size.
+        """
+        h = MaxHeap()
+        self.assertEqual(-1, h._last_index())
 
     # def test_last_index_one(self):
     #     """
