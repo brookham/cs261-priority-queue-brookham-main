@@ -171,28 +171,28 @@ class TestMaxHeap(unittest.TestCase):
         self.assertRaises(IndexError, h._value_at, 1)
         self.assertRaises(IndexError, h._value_at, 2)
 
-    # """
-    # Indexes of left child, right child, and parent.
-    # A heap stores values linearly in a list, but it's really a tree. The root is
-    # at 0, and its left child is at index 1, and its right child is at index 2.
-    # The element at index 1 has a left child at index 3, and a right at index 4.
-    # The element at index 2 has a left child at index 5, and a right at index 6.
-    # What's the formula for this?
-    # Hint: Draw it out.
-    # """
+    """
+    Indexes of left child, right child, and parent.
+    A heap stores values linearly in a list, but it's really a tree. The root is
+    at 0, and its left child is at index 1, and its right child is at index 2.
+    The element at index 1 has a left child at index 3, and a right at index 4.
+    The element at index 2 has a left child at index 5, and a right at index 6.
+    What's the formula for this?
+    Hint: Draw it out.
+    """
 
-    # def test_left_child_index(self):
-    #     """
-    #     Test 15: An element at index i has a left child at index ____.
-    #     Hint: Know how the heap works. Look up and study the concept.
-    #     """
-    #     h = MaxHeap()
-    #     # This method just calculates the index. It doesn't care about the data.
-    #     self.assertEqual(1, h._left_child_index(0))
-    #     self.assertEqual(3, h._left_child_index(1))
-    #     self.assertEqual(5, h._left_child_index(2))
-    #     self.assertEqual(7, h._left_child_index(3))
-    #     self.assertEqual(8675309, h._left_child_index(4337654))
+    def test_left_child_index(self):
+        """
+        Test 15: An element at index i has a left child at index ____.
+        Hint: Know how the heap works. Look up and study the concept.
+        """
+        h = MaxHeap()
+        # This method just calculates the index. It doesn't care about the data.
+        self.assertEqual(1, h._left_child_index(0))
+        self.assertEqual(3, h._left_child_index(1))
+        self.assertEqual(5, h._left_child_index(2))
+        self.assertEqual(7, h._left_child_index(3))
+        self.assertEqual(8675309, h._left_child_index(4337654))
 
     # def test_right_child_index(self):
     #     """
