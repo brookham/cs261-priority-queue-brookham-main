@@ -12,4 +12,5 @@
 # Time spent:
 
 class MaxHeap:
-    pass
+    def __init__(self):
+        self._data = []
