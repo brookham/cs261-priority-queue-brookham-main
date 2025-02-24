@@ -229,51 +229,51 @@ class TestMaxHeap(unittest.TestCase):
         self.assertEqual(4337654, h._parent_index(8675309))
         self.assertEqual(2722, h._parent_index(5446))
 
-    # """
-    # Left child, right child, and parent _values_.
-    # Now that we know that calculating the left, right and parent indexes given
-    # any element's index, retrieving the values there is easy.
-    # Hint: Use your previous abstractions. Don't repeat yourself.
-    # """
+    """
+    Left child, right child, and parent _values_.
+    Now that we know that calculating the left, right and parent indexes given
+    any element's index, retrieving the values there is easy.
+    Hint: Use your previous abstractions. Don't repeat yourself.
+    """
 
-    # def test_parent(self):
-    #     """
-    #     Test 18: Given an index i, the parent is the value at the 'parent index' of i.
-    #     Hint: The phrase above is nearly identical to the code, if you use your
-    #           abstractions.
-    #     """
-    #     h = MaxHeap()
-    #     fake_root = fake_value()
-    #     fake_left_child = fake_value()
-    #     fake_right_child = fake_value()
-    #     fake_left_left_child = fake_value()
-    #     fake_left_right_child = fake_value()
-    #     h._data.append(fake_root)
-    #     h._data.append(fake_left_child)
-    #     h._data.append(fake_right_child)
-    #     h._data.append(fake_left_left_child)
-    #     h._data.append(fake_left_right_child)
-    #     self.assertEqual(fake_root, h._parent(1))
-    #     self.assertEqual(fake_root, h._parent(2))
-    #     self.assertEqual(fake_left_child, h._parent(3))
-    #     self.assertEqual(fake_left_child, h._parent(4))
+    def test_parent(self):
+        """
+        Test 18: Given an index i, the parent is the value at the 'parent index' of i.
+        Hint: The phrase above is nearly identical to the code, if you use your
+              abstractions.
+        """
+        h = MaxHeap()
+        fake_root = fake_value()
+        fake_left_child = fake_value()
+        fake_right_child = fake_value()
+        fake_left_left_child = fake_value()
+        fake_left_right_child = fake_value()
+        h._data.append(fake_root)
+        h._data.append(fake_left_child)
+        h._data.append(fake_right_child)
+        h._data.append(fake_left_left_child)
+        h._data.append(fake_left_right_child)
+        self.assertEqual(fake_root, h._parent(1))
+        self.assertEqual(fake_root, h._parent(2))
+        self.assertEqual(fake_left_child, h._parent(3))
+        self.assertEqual(fake_left_child, h._parent(4))
 
-    # def test_parent_invalid(self):
-    #     """
-    #     Test 19: Retrieving the parent value for an index without a parent is invalid.
-    #     """
-    #     h = MaxHeap()
-    #     self.assertRaises(IndexError, h._parent, 0)
-    #     self.assertRaises(IndexError, h._parent, 1)
-    #     self.assertRaises(IndexError, h._parent, 2)
-    #     h._data.append('fake')
-    #     try:
-    #         h._parent(1)
-    #         h._parent(2)
-    #     except IndexError:
-    #         self.fail("Could not retrieve parent properly.")
-    #     for i in range(3, 9):
-    #         self.assertRaises(IndexError, h._parent, i)
+    def test_parent_invalid(self):
+        """
+        Test 19: Retrieving the parent value for an index without a parent is invalid.
+        """
+        h = MaxHeap()
+        self.assertRaises(IndexError, h._parent, 0)
+        self.assertRaises(IndexError, h._parent, 1)
+        self.assertRaises(IndexError, h._parent, 2)
+        h._data.append('fake')
+        try:
+            h._parent(1)
+            h._parent(2)
+        except IndexError:
+            self.fail("Could not retrieve parent properly.")
+        for i in range(3, 9):
+            self.assertRaises(IndexError, h._parent, i)
 
     # def test_left_child_none(self):
     #     """

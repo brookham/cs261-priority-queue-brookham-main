@@ -40,4 +40,6 @@ class MaxHeap:
         parent = (index-1) // 2
         return parent
 
+    def _parent(self, index):
+        return self._data[self._parent_index(index)]
 
