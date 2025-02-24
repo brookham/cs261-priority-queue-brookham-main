@@ -194,40 +194,40 @@ class TestMaxHeap(unittest.TestCase):
         self.assertEqual(7, h._left_child_index(3))
         self.assertEqual(8675309, h._left_child_index(4337654))
 
-    # def test_right_child_index(self):
-    #     """
-    #     Test 16: An element at index i has a right child at index ____.
-    #     Hint: Know how the heap works. Look up and study the concept.
-    #     """
-    #     h = MaxHeap()
-    #     # This method just calculates the index. It doesn't care about the data.
-    #     self.assertEqual(2, h._right_child_index(0))
-    #     self.assertEqual(4, h._right_child_index(1))
-    #     self.assertEqual(6, h._right_child_index(2))
-    #     self.assertEqual(8, h._right_child_index(3))
-    #     self.assertEqual(5446, h._right_child_index(2722))
+    def test_right_child_index(self):
+        """
+        Test 16: An element at index i has a right child at index ____.
+        Hint: Know how the heap works. Look up and study the concept.
+        """
+        h = MaxHeap()
+        # This method just calculates the index. It doesn't care about the data.
+        self.assertEqual(2, h._right_child_index(0))
+        self.assertEqual(4, h._right_child_index(1))
+        self.assertEqual(6, h._right_child_index(2))
+        self.assertEqual(8, h._right_child_index(3))
+        self.assertEqual(5446, h._right_child_index(2722))
 
-    # def test_parent_index(self):
-    #     """
-    #     Test 17: An element at index i has a parent at index ___.
-    #     Hints: Work this out instead of looking it up. Draw it.
-    #            And, use integer division for natural flooring.
-    #            Watch your order of operations.
-    #     """
-    #     h = MaxHeap()
-    #     # This first one is nonsense, but is here for completeness.
-    #     self.assertEqual(-1, h._parent_index(0))
-    #     # The root's left child is at 1, so its parent is at index 0.
-    #     self.assertEqual(0, h._parent_index(1))
-    #     # The root's right child is at 2, so its parent is at index 0.
-    #     self.assertEqual(0, h._parent_index(2))
-    #     self.assertEqual(1, h._parent_index(3))
-    #     self.assertEqual(1, h._parent_index(4))
-    #     self.assertEqual(2, h._parent_index(5))
-    #     self.assertEqual(2, h._parent_index(6))
-    #     self.assertEqual(3, h._parent_index(7))
-    #     self.assertEqual(4337654, h._parent_index(8675309))
-    #     self.assertEqual(2722, h._parent_index(5446))
+    def test_parent_index(self):
+        """
+        Test 17: An element at index i has a parent at index ___.
+        Hints: Work this out instead of looking it up. Draw it.
+               And, use integer division for natural flooring.
+               Watch your order of operations.
+        """
+        h = MaxHeap()
+        # This first one is nonsense, but is here for completeness.
+        self.assertEqual(-1, h._parent_index(0))
+        # The root's left child is at 1, so its parent is at index 0.
+        self.assertEqual(0, h._parent_index(1))
+        # The root's right child is at 2, so its parent is at index 0.
+        self.assertEqual(0, h._parent_index(2))
+        self.assertEqual(1, h._parent_index(3))
+        self.assertEqual(1, h._parent_index(4))
+        self.assertEqual(2, h._parent_index(5))
+        self.assertEqual(2, h._parent_index(6))
+        self.assertEqual(3, h._parent_index(7))
+        self.assertEqual(4337654, h._parent_index(8675309))
+        self.assertEqual(2722, h._parent_index(5446))
 
     # """
     # Left child, right child, and parent _values_.
