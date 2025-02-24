@@ -11,10 +11,17 @@
 class NaivePriorityQueue:
     def __init__(self):
         self.data = []
+        self.size = 0
 
     def enqueue(self, value):
         self.data.append(value)
+        self.size += 1
 
     def dequeue(self):
         self.data = sorted(self.data)
+        self.size -= 1
         return self.data.pop()
+    
+    def is_empty(self):
+        if self.size == 0:
+            return True

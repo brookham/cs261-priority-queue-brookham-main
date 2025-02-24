@@ -99,63 +99,63 @@ class TestNaivePriorityQueue(unittest.TestCase):
         pq.enqueue(lower_priority)
         self.assertEqual(higher_priority, pq.dequeue())
 
-    # def test_dequeue_two_internal(self):
-    #     """
-    #     Test 9: Dequeuing from a two-element queue removes the job with the highest
-    #     priority from the list.
-    #     """
-    #     pq = NaivePriorityQueue()
-    #     lower_priority = Job(1, 'metropolis')
-    #     higher_priority = Job(3, 'shining')
-    #     pq.enqueue(higher_priority)
-    #     pq.enqueue(lower_priority)
-    #     _ = pq.dequeue()
-    #     self.assertEqual(lower_priority, pq.data[0])
-    #     self.assertEqual(1, len(pq.data))
+    def test_dequeue_two_internal(self):
+        """
+        Test 9: Dequeuing from a two-element queue removes the job with the highest
+        priority from the list.
+        """
+        pq = NaivePriorityQueue()
+        lower_priority = Job(1, 'metropolis')
+        higher_priority = Job(3, 'shining')
+        pq.enqueue(higher_priority)
+        pq.enqueue(lower_priority)
+        _ = pq.dequeue()
+        self.assertEqual(lower_priority, pq.data[0])
+        self.assertEqual(1, len(pq.data))
 
-    # def test_dequeue_three(self):
-    #     """
-    #     Test 10: Dequeuing from a three-element queue returns the jobs with the highest
-    #     priority.
-    #     """
-    #     pq = NaivePriorityQueue()
-    #     lower_priority = Job(1, 'like')
-    #     middle_priority = Job(3, 'who')
-    #     higher_priority = Job(5, 'on')
-    #     pq.enqueue(higher_priority)
-    #     pq.enqueue(lower_priority)
-    #     pq.enqueue(middle_priority)
-    #     self.assertEqual(higher_priority, pq.dequeue())
-    #     self.assertEqual(middle_priority, pq.dequeue())
-    #     self.assertEqual(lower_priority, pq.dequeue())
+    def test_dequeue_three(self):
+        """
+        Test 10: Dequeuing from a three-element queue returns the jobs with the highest
+        priority.
+        """
+        pq = NaivePriorityQueue()
+        lower_priority = Job(1, 'like')
+        middle_priority = Job(3, 'who')
+        higher_priority = Job(5, 'on')
+        pq.enqueue(higher_priority)
+        pq.enqueue(lower_priority)
+        pq.enqueue(middle_priority)
+        self.assertEqual(higher_priority, pq.dequeue())
+        self.assertEqual(middle_priority, pq.dequeue())
+        self.assertEqual(lower_priority, pq.dequeue())
 
-    # def test_dequeue_three_internal(self):
-    #     """
-    #     Test 11: Dequeuing from a three-element queue removes each dequeued value from
-    #     the internal list, highest-priority first.
-    #     """
-    #     pq = NaivePriorityQueue()
-    #     lower_priority = Job(1, 'top')
-    #     middle_priority = Job(3, 'of')
-    #     higher_priority = Job(5, 'this')
-    #     pq.enqueue(higher_priority)
-    #     pq.enqueue(lower_priority)
-    #     pq.enqueue(middle_priority)
-    #     _ = pq.dequeue()
-    #     self.assertEqual(lower_priority, pq.data[0])
-    #     _ = pq.dequeue()
-    #     self.assertEqual(lower_priority, pq.data[0])
+    def test_dequeue_three_internal(self):
+        """
+        Test 11: Dequeuing from a three-element queue removes each dequeued value from
+        the internal list, highest-priority first.
+        """
+        pq = NaivePriorityQueue()
+        lower_priority = Job(1, 'top')
+        middle_priority = Job(3, 'of')
+        higher_priority = Job(5, 'this')
+        pq.enqueue(higher_priority)
+        pq.enqueue(lower_priority)
+        pq.enqueue(middle_priority)
+        _ = pq.dequeue()
+        self.assertEqual(lower_priority, pq.data[0])
+        _ = pq.dequeue()
+        self.assertEqual(lower_priority, pq.data[0])
 
-    # """
-    # Emptiness
-    # """
+    """
+    Emptiness
+    """
 
-    # def test_empty(self):
-    #     """
-    #     Test 12: A queue is initially empty.
-    #     """
-    #     pq = NaivePriorityQueue()
-    #     self.assertTrue(pq.is_empty())
+    def test_empty(self):
+        """
+        Test 12: A queue is initially empty.
+        """
+        pq = NaivePriorityQueue()
+        self.assertTrue(pq.is_empty())
 
     # def test_not_empty(self):
     #     """
