@@ -594,23 +594,23 @@ class TestMaxHeap(unittest.TestCase):
         h._sift_down(0)
         self.assertEqual(1, h._data[0])
 
-    # def test_sift_down_two_stable(self):
-    #     """
-    #     Test 36: Sifting down an element in a two-element heap, when the element is larger
-    #     than its child, is easy.
-    #     Hint: Be naive for now.
-    #     """
-    #     h = MaxHeap()
-    #     h._data.append(5)
-    #     h._data.append(1)
-    #     # Sifting down the root of this tree doesn't change anything.
-    #     h._sift_down(0)
-    #     self.assertEqual(5, h._data[0])
-    #     self.assertEqual(1, h._data[1])
-    #     # Sifting down the last element of this tree doesn't change anything, either.
-    #     h._sift_down(1)
-    #     self.assertEqual(5, h._data[0])
-    #     self.assertEqual(1, h._data[1])
+    def test_sift_down_two_stable(self):
+        """
+        Test 36: Sifting down an element in a two-element heap, when the element is larger
+        than its child, is easy.
+        Hint: Be naive for now.
+        """
+        h = MaxHeap()
+        h._data.append(5)
+        h._data.append(1)
+        # Sifting down the root of this tree doesn't change anything.
+        h._sift_down(0)
+        self.assertEqual(5, h._data[0])
+        self.assertEqual(1, h._data[1])
+        # Sifting down the last element of this tree doesn't change anything, either.
+        h._sift_down(1)
+        self.assertEqual(5, h._data[0])
+        self.assertEqual(1, h._data[1])
 
     # def test_sift_down_three_stable(self):
     #     """
