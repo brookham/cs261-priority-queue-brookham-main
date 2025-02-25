@@ -476,29 +476,29 @@ class TestMaxHeap(unittest.TestCase):
         h._data.append('fake')
         self.assertTrue(h._obeys_heap_property_at_index(0))
 
-    # def test_heap_property_two_violate(self):
-    #     """
-    #     Test 30: A heap with two elements, with a parent value less than its left child's
-    #     value violates the max-heap property.
-    #     """
-    #     h = MaxHeap()
-    #     h._data.append(5)
-    #     h._data.append(10)
-    #     # Index 0 (root / value 5) has a child with a value 10, so it violates.
-    #     self.assertFalse(h._obeys_heap_property_at_index(0))
-    #     # No children at 1, so it obeys here:
-    #     self.assertTrue(h._obeys_heap_property_at_index(1))
+    def test_heap_property_two_violate(self):
+        """
+        Test 30: A heap with two elements, with a parent value less than its left child's
+        value violates the max-heap property.
+        """
+        h = MaxHeap()
+        h._data.append(5)
+        h._data.append(10)
+        # Index 0 (root / value 5) has a child with a value 10, so it violates.
+        self.assertFalse(h._obeys_heap_property_at_index(0))
+        # No children at 1, so it obeys here:
+        self.assertTrue(h._obeys_heap_property_at_index(1))
 
-    # def test_heap_property_two_obey(self):
-    #     """
-    #     Test 31: A heap with two elements, with a parent value greater than its left
-    #     child's value obeys the max-heap property.
-    #     """
-    #     h = MaxHeap()
-    #     h._data.append(10)
-    #     h._data.append(5)
-    #     self.assertTrue(h._obeys_heap_property_at_index(0))
-    #     self.assertTrue(h._obeys_heap_property_at_index(1))
+    def test_heap_property_two_obey(self):
+        """
+        Test 31: A heap with two elements, with a parent value greater than its left
+        child's value obeys the max-heap property.
+        """
+        h = MaxHeap()
+        h._data.append(10)
+        h._data.append(5)
+        self.assertTrue(h._obeys_heap_property_at_index(0))
+        self.assertTrue(h._obeys_heap_property_at_index(1))
 
     # def test_heap_property_three_violate(self):
     #     """
