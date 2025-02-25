@@ -87,10 +87,13 @@ class MaxHeap:
         self._data[a], self._data[b] = self._data[b], self._data[a]
 
     def _sift_down(self, index):
-        if self._has_left_child(index) or self._has_right_child(index):
-            if self._value_at(index) > self._left_child(index):
-                return self._value_at(index)
-            if self._value_at(index) > self._right_child(index):
-                return self._value_at(index)
+        if not self._has_left_child(index) and not self._has_right_child(index):
+            return
+        if not self._obeys_heap_property_at_index(index):
+            child_index = self._greater_child_index(index)
+            self._swap(index, child_index)
+            self._sift_down(child_index)
+
+    def
             
         
