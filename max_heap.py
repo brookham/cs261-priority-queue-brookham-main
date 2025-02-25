@@ -95,9 +95,17 @@ class MaxHeap:
             self._sift_down(child_index)
 
     def _sift_up(self, index):
-        if self._parent_index(index) < 0:
+        if index == 0:
             return
-        if not self._obeys_heap_property_at_index(self._parent_index(index)):
-            parent_index = self._parent_index(index)
+        parent_index = self._parent_index(index)
+        if self._value_at(index) > self._value_at(parent_index):
             self._swap(index, parent_index)
-            self._sift_up(index)
+            self._sift_up(parent_index)
+
+    def insert(self, value):
+        self._data.append(value)
+        self._sift_up(self._last_index())
+
+    def delete(self):
+        if self._is_empty:
+            return None
