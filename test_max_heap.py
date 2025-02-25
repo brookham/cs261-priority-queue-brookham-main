@@ -522,77 +522,77 @@ class TestMaxHeap(unittest.TestCase):
         self.assertTrue(h._obeys_heap_property_at_index(1))
         self.assertTrue(h._obeys_heap_property_at_index(2))
 
-    # def test_heap_property_three_obey(self):
-    #     """
-    #     Test 33: A heap with three elements, with a parent value greater than its left
-    #     child's value and its right child's value obeys the max-heap property.
-    #     Hint: Refine your logic. What are the possible states? No children,
-    #     a left child, or both a left and right child.
-    #     """
-    #     h = MaxHeap()
-    #     h._data.append(10)
-    #     h._data.append(5)
-    #     h._data.append(1)
-    #     self.assertTrue(h._obeys_heap_property_at_index(0))
-    #     self.assertTrue(h._obeys_heap_property_at_index(1))
-    #     self.assertTrue(h._obeys_heap_property_at_index(2))
-    #     h._data = []
-    #     h._data.append(10)
-    #     h._data.append(1)
-    #     h._data.append(5)
-    #     self.assertTrue(h._obeys_heap_property_at_index(0))
-    #     self.assertTrue(h._obeys_heap_property_at_index(1))
-    #     self.assertTrue(h._obeys_heap_property_at_index(2))
+    def test_heap_property_three_obey(self):
+        """
+        Test 33: A heap with three elements, with a parent value greater than its left
+        child's value and its right child's value obeys the max-heap property.
+        Hint: Refine your logic. What are the possible states? No children,
+        a left child, or both a left and right child.
+        """
+        h = MaxHeap()
+        h._data.append(10)
+        h._data.append(5)
+        h._data.append(1)
+        self.assertTrue(h._obeys_heap_property_at_index(0))
+        self.assertTrue(h._obeys_heap_property_at_index(1))
+        self.assertTrue(h._obeys_heap_property_at_index(2))
+        h._data = []
+        h._data.append(10)
+        h._data.append(1)
+        h._data.append(5)
+        self.assertTrue(h._obeys_heap_property_at_index(0))
+        self.assertTrue(h._obeys_heap_property_at_index(1))
+        self.assertTrue(h._obeys_heap_property_at_index(2))
 
-    # """
-    # Swap. Given the indexes of two items, swap their positions in the data list.
-    # This swaps their position in the conceptual tree. We'll only ever use it to
-    # swap a child with its parent, or vice-versa. But, this method shouldn't care.
-    # """
+    """
+    Swap. Given the indexes of two items, swap their positions in the data list.
+    This swaps their position in the conceptual tree. We'll only ever use it to
+    swap a child with its parent, or vice-versa. But, this method shouldn't care.
+    """
 
-    # def test_swap(self):
-    #     """
-    #     Test 34: Given an index a and an index b, swapping a with b moves b's value to a
-    #     and a's value to b.
-    #     Hint: A classic algorithm. Three lines.
-    #     """
-    #     h = MaxHeap()
-    #     h._data.append(10)
-    #     h._data.append(5)
-    #     h._data.append(1)
-    #     h._swap(0, 1)
-    #     self.assertEqual(5, h._data[0])
-    #     self.assertEqual(10, h._data[1])
-    #     h._swap(0, 2)
-    #     self.assertEqual(1, h._data[0])
-    #     self.assertEqual(5, h._data[2])
-    #     # We'll never swap siblings, but let's make sure swap is simple.
-    #     h._swap(1, 2)
-    #     self.assertEqual(5, h._data[1])
-    #     self.assertEqual(10, h._data[2])
+    def test_swap(self):
+        """
+        Test 34: Given an index a and an index b, swapping a with b moves b's value to a
+        and a's value to b.
+        Hint: A classic algorithm. Three lines.
+        """
+        h = MaxHeap()
+        h._data.append(10)
+        h._data.append(5)
+        h._data.append(1)
+        h._swap(0, 1)
+        self.assertEqual(5, h._data[0])
+        self.assertEqual(10, h._data[1])
+        h._swap(0, 2)
+        self.assertEqual(1, h._data[0])
+        self.assertEqual(5, h._data[2])
+        # We'll never swap siblings, but let's make sure swap is simple.
+        h._swap(1, 2)
+        self.assertEqual(5, h._data[1])
+        self.assertEqual(10, h._data[2])
 
-    # """
-    # Sift down. An important heap algorithm.
-    # When we remove an element from the heap, we always remove the root. We then
-    # take the last element in the heap and make it the new root. But that new
-    # root's value will most definitely be smaller than it's childrens' values.
-    # And we don't want to violate the max-heap property. We rectify this by
-    # 'sifting' or 'pushing' down the new root until it is in a location where it
-    # is greater than its two children.
-    # But, what direction do we push the node down: the left or the right?
-    # The algorithm for a max-heap is that we push down the branch owned by the
-    # larger child.
-    # """
+    """
+    Sift down. An important heap algorithm.
+    When we remove an element from the heap, we always remove the root. We then
+    take the last element in the heap and make it the new root. But that new
+    root's value will most definitely be smaller than it's childrens' values.
+    And we don't want to violate the max-heap property. We rectify this by
+    'sifting' or 'pushing' down the new root until it is in a location where it
+    is greater than its two children.
+    But, what direction do we push the node down: the left or the right?
+    The algorithm for a max-heap is that we push down the branch owned by the
+    larger child.
+    """
 
-    # def test_sift_down_one(self):
-    #     """
-    #     Test 35: Sifting down the root of a single-element heap is easy.
-    #     Hint: Be naive for now.
-    #     """
-    #     h = MaxHeap()
-    #     h._data.append(1)
-    #     h._sift_down(0)
-    #     self.assertEqual(1, h._data[0])
+    def test_sift_down_one(self):
+        """
+        Test 35: Sifting down the root of a single-element heap is easy.
+        Hint: Be naive for now.
+        """
+        h = MaxHeap()
+        h._data.append(1)
+        h._sift_down(0)
+        self.assertEqual(1, h._data[0])
 
     # def test_sift_down_two_stable(self):
     #     """

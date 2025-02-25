@@ -82,3 +82,7 @@ class MaxHeap:
         if self._has_right_child(index) and self._value_at(index) < self._right_child(index):
             return False
         return True
+    
+    def _swap(self, a, b):
+        self._data[a], self._data[b] = self._data[b], self._data[a]
+        
