@@ -68,18 +68,17 @@ class MaxHeap:
             return None
         elif self._has_left_child(index) and not self._has_right_child(index):
             return self._left_child_index(index)
-        elif self._has_left_child(index) or self._has_right_child(index):
+        elif self._has_left_child(index) and self._has_right_child(index):
             if self._left_child(index) >= self._right_child(index):
                 return self._left_child_index(index)
-            elif self._right_child(index) >= self._left_child(index):
+            else:
                 return self._right_child_index(index)
             
-    def _obeys_heap_property_at_index(self, parent):
-        if self._value_at(parent) and not self._left_child(parent) and not self._left_child(parent):
+    def _obeys_heap_property_at_index(self, index):
+        if not self._has_left_child(index) and not self._has_right_child(index):
             return True
-        if self._left_child(parent):
-            if self._value_at(parent) >= self._left_child(parent):
-                return True
-            else: return False
-    
-        else: return False
+        if self._has_left_child(index) and self._value_at(index) < self._left_child(index):
+            return False
+        if self._has_right_child(index) and self._value_at(index) < self._right_child(index):
+            return False
+        return True
