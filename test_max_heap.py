@@ -760,63 +760,63 @@ class TestMaxHeap(unittest.TestCase):
         h._sift_up(0)
         self.assertEqual(1, h._data[0])
 
-    # def test_sift_up_two_stable(self):
-    #     """
-    #     Test 44: Sifting up an element in a two-element heap, when the element is smaller
-    #     than its parent, is easy.
-    #     Hint: Be naive for now.
-    #     """
-    #     h = MaxHeap()
-    #     h._data.append(5)
-    #     h._data.append(1)
-    #     # Sifting up the root of this tree doesn't change anything.
-    #     h._sift_up(0)
-    #     self.assertEqual(5, h._data[0])
-    #     self.assertEqual(1, h._data[1])
-    #     # Sifting up the last element of this tree doesn't change anything, either.
-    #     h._sift_up(1)
-    #     self.assertEqual(5, h._data[0])
-    #     self.assertEqual(1, h._data[1])
+    def test_sift_up_two_stable(self):
+        """
+        Test 44: Sifting up an element in a two-element heap, when the element is smaller
+        than its parent, is easy.
+        Hint: Be naive for now.
+        """
+        h = MaxHeap()
+        h._data.append(5)
+        h._data.append(1)
+        # Sifting up the root of this tree doesn't change anything.
+        h._sift_up(0)
+        self.assertEqual(5, h._data[0])
+        self.assertEqual(1, h._data[1])
+        # Sifting up the last element of this tree doesn't change anything, either.
+        h._sift_up(1)
+        self.assertEqual(5, h._data[0])
+        self.assertEqual(1, h._data[1])
 
-    # def test_sift_up_three_stable(self):
-    #     """
-    #     Test 45: Sifting up an element in a three-element heap, when the element is smaller
-    #     than its parent, is easy.
-    #     Hint: Be naive for now.
-    #     """
-    #     h = MaxHeap()
-    #     h._data.append(10)
-    #     h._data.append(5)
-    #     h._data.append(1)
-    #     # Sifting up the root of this tree doesn't change anything.
-    #     h._sift_up(0)
-    #     self.assertEqual(10, h._data[0])
-    #     self.assertEqual(5, h._data[1])
-    #     self.assertEqual(1, h._data[2])
-    #     # Sifting up the left leaf of this tree doesn't change anything.
-    #     h._sift_up(1)
-    #     self.assertEqual(10, h._data[0])
-    #     self.assertEqual(5, h._data[1])
-    #     self.assertEqual(1, h._data[2])
-    #     # Sifting up the right leaft of this tree doesn't change anything.
-    #     h._sift_up(2)
-    #     self.assertEqual(10, h._data[0])
-    #     self.assertEqual(5, h._data[1])
-    #     self.assertEqual(1, h._data[2])
+    def test_sift_up_three_stable(self):
+        """
+        Test 45: Sifting up an element in a three-element heap, when the element is smaller
+        than its parent, is easy.
+        Hint: Be naive for now.
+        """
+        h = MaxHeap()
+        h._data.append(10)
+        h._data.append(5)
+        h._data.append(1)
+        # Sifting up the root of this tree doesn't change anything.
+        h._sift_up(0)
+        self.assertEqual(10, h._data[0])
+        self.assertEqual(5, h._data[1])
+        self.assertEqual(1, h._data[2])
+        # Sifting up the left leaf of this tree doesn't change anything.
+        h._sift_up(1)
+        self.assertEqual(10, h._data[0])
+        self.assertEqual(5, h._data[1])
+        self.assertEqual(1, h._data[2])
+        # Sifting up the right leaft of this tree doesn't change anything.
+        h._sift_up(2)
+        self.assertEqual(10, h._data[0])
+        self.assertEqual(5, h._data[1])
+        self.assertEqual(1, h._data[2])
 
-    # def test_sift_up_two_unstable(self):
-    #     """
-    #     Test 46: Sifting up an element in a two-element heap, when the element is larger
-    #     than its parent swaps the element with its parent.
-    #     Hint: A little more genuine now. Refine your logic. Use your abstractions.
-    #     """
-    #     h = MaxHeap()
-    #     h._data.append(1)
-    #     h._data.append(5)
-    #     # Sifting up the leaf of this tree swaps it with its parent.
-    #     h._sift_up(1)
-    #     self.assertEqual(5, h._data[0])
-    #     self.assertEqual(1, h._data[1])
+    def test_sift_up_two_unstable(self):
+        """
+        Test 46: Sifting up an element in a two-element heap, when the element is larger
+        than its parent swaps the element with its parent.
+        Hint: A little more genuine now. Refine your logic. Use your abstractions.
+        """
+        h = MaxHeap()
+        h._data.append(1)
+        h._data.append(5)
+        # Sifting up the leaf of this tree swaps it with its parent.
+        h._sift_up(1)
+        self.assertEqual(5, h._data[0])
+        self.assertEqual(1, h._data[1])
 
     # def test_sift_up_three_unstable_left(self):
     #     """
